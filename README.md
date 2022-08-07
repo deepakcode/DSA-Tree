@@ -128,5 +128,35 @@ Time complecity is same in both O(n) but space complexity is O(h) for aux stack,
 ```
     
 </details>
-    
+
+2. Check for BST
+
+3. Print Bottom View of Binary Tree
+
+4. Print a Binary Tree in Vertical Order
+
+5. Level order traversal in spiral form
+
+6. Connect Nodes at Same Level
+
+7. Lowest Common Ancestor in a BST
+
+8. Convert a given Binary Tree to Doubly Linked List
+
+9. Write Code to Determine if Two Trees are Identical or Not
+
+10. Given a binary tree, check whether it is a mirror of itself
+
+11. Height of Binary Tree
+
+12. Maximum Path Sum
+
+13. Diameter of a Binary Tree
+
+14. Number of leaf nodes
+
+15. Check if given Binary Tree is Height Balanced or Not
+
+16. Serialize and Deserialize a Binary Tree
+
 </p>
