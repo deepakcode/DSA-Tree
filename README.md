@@ -131,6 +131,15 @@ Time complecity is same in both O(n) but space complexity is O(h) for aux stack,
 
 2. Check for BST
 
+BST property is left should be less than root and right should be greater then root.
+
+It is is BST in-order travers should give us sorted array, so we just need to check each number is in accending order! 
+
+  if(root.data<min || root.data>max)
+            return false;
+            
+
+
 ```java
 public class Solution
 {
