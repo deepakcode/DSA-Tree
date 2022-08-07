@@ -1,11 +1,20 @@
+# Tree: Must do coding questions
 
-#### Deepak
+#### 1) Print Left View of Binary Tree
 
-Deepak
+Left view of the tree can be printed using level order traversal.
 
+<p>
+https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+  
+</details>
+
+<summary>code</summary>    
+      
 ```java
-class Temp{
-  public static void main(String args){
-  }
-}
+    
 ```
+    
+</details>
+    
+</p>
