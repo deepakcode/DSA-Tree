@@ -95,13 +95,35 @@ https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
     
 </details>
 
+Time complecity is same in both O(n) but space complexity is O(h) for aux stack, in case of DFS, whereas in BFS queus is storing each level so ~O(N/2) for queue size.
 </details>
 
 <summary>code (DFS - R'LR - use a data structure to store first value at each level)</summary>    
       
 ```java
  
- 
+     //Function to return list containing elements of left view of binary tree.
+    ArrayList<Integer> leftView(Node root)
+    {
+        ArrayList<Integer> res = new  ArrayList<>();
+        leftViewUtil(root,res,0);
+        return res;
+    }
+    
+    //R' L R
+    
+    public void leftViewUtil(Node root, ArrayList<Integer> res, int level){
+        
+        if(root==null)
+            return;
+        
+        if(level==res.size())
+            res.add(root.data);
+        
+        leftViewUtil(root.left,res,level+1);
+        leftViewUtil(root.right,res,level+1);
+        
+    }
  
 ```
     
