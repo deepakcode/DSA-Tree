@@ -131,6 +131,35 @@ Time complecity is same in both O(n) but space complexity is O(h) for aux stack,
 
 2. Check for BST
 
+```java
+public class Solution
+{
+    //Function to check whether a Binary Tree is BST or not.
+    boolean isBST(Node root)
+    {
+        int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE;
+        return checkBST(root,min,max);
+    }
+    
+    boolean checkBST(Node root, int min, int max){
+        if(root==null)
+            return true;
+        
+        if(root.data<min || root.data>max)
+            return false;
+          
+       boolean leftTrue = checkBST(root.left, min, root.data-1 );
+       boolean rightTrue = checkBST(root.right, root.data+1, max);
+        
+       if(leftTrue && rightTrue)
+            return true;
+        else
+            return false;
+    }
+}
+```
+
 3. Print Bottom View of Binary Tree
 
 4. Print a Binary Tree in Vertical Order
