@@ -557,6 +557,9 @@ class Res{
 ```
 
 09. Write Code to Determine if Two Trees are Identical or Not
+
+Note : just compare root value and perform same check recursivly on root.left and root.right
+
 ```java
 class Solution
 {
