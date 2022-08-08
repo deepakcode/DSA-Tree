@@ -283,7 +283,7 @@ class NodeW {
 
 5. Level order traversal in spiral form
 
-## 6. Lowest Common Ancestor in a BST
+#### 6. Lowest Common Ancestor in a BST
 
   If we get null from left tree then all three nodes are present in right tree, and vise versa.
   
@@ -291,9 +291,38 @@ class NodeW {
   
   So the idea is we will search for left node in left, if it is not present then both would be right tree and vise versa.
   
-## 7. Maximum Path Sum
+  ```java
+  
+    class Solution
+    {
+        //Function to return the lowest common ancestor in a Binary Tree.
+      Node lca(Node root, int n1,int n2)
+      {
+             if(root==null)
+              return null;
 
-## 8. Diameter of a Binary Tree
+             if(root.data==n1 || root.data==n2)
+                  return root;
+
+             Node leftLca = lca(root.left, n1, n2);     
+             Node rightLca = lca(root.right, n1, n2);
+
+             if(leftLca != null && rightLca != null){
+                 return root;
+             }else if (leftLca != null){
+                 return leftLca;
+             }else {
+                 return rightLca;
+             }
+      }
+    }
+  ``
+  
+#### 7. Maximum Path Sum
+
+
+
+#### 8. Diameter of a Binary Tree
   
   9. Connect Nodes at Same Level
 
