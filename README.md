@@ -321,12 +321,66 @@ class NodeW {
   
 #### 7. Maximum Path Sum
 
-    Take max of below 4 values for each node 
+    Take max of below 3 values for each node 
    
-      - Root
-      - Root+left;
-      - Root+Right;
-      - Root+left+Right;
+         //max path sum for parent call of root. 
+         //This path must include at-most one child of root.    
+        int max_single = Math.max(node.data, node.data + Math.max(l ,r));
+        
+        //path via self | when node it self is result
+        //max_top represents the sum when the node under consideration 
+        int max_top = Math.max(max_single, l + r + node.data);
+        
+        //storing the maximum result.
+        res.val = Math.max(res.val, max_top);
+      
+https://practice.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1      
+      
+```java
+class Res{
+    int val=0;
+}
+
+class Solution
+{
+    //Function to return maximum path sum from any node in a tree.
+    //Function to return maximum path sum from any node in a tree.
+    
+     int findMaxSum(Node node){
+          Res res = new Res();
+          
+          findMaxSum(Node node, res);
+          
+          return res;
+     }
+    
+    void findMaxSum(Node node, Res res){
+
+        int l = 0, r = 0;
+        
+        if(node==null)
+            return;
+            
+        if(node.left !=null) 
+            l = findMaxSum(node.left,res);
+            
+        if(node.right !=null) 
+            r = findMaxSum(node.right,res);
+           
+         //max path sum for parent call of root. 
+         //This path must include at-most one child of root.    
+        int max_single = Math.max(node.data, node.data + Math.max(l ,r));
+        
+        //path via self | when node it self is result
+        //max_top represents the sum when the node under consideration 
+        int max_top = Math.max(max_single, l + r + node.data);
+        
+        //storing the maximum result.
+        res.val = Math.max(res.val, max_top);
+        
+    }
+}
+```
 
 
 #### 8. Diameter of a Binary Tree
