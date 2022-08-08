@@ -283,6 +283,28 @@ class NodeW {
 
 5. Level order traversal in spiral form
 
+
+ 5.1 This can be solved via two ways - Modify level order traversal - toggle leftToRightFlag flag "recursivly" - 
+ 
+ `if(h>1 ){
+            if(leftToRightFlag){
+                if(node.left !=null)
+                    printLevel(node.left,h-1,leftToRightFlag,res);
+                    
+                if(node.right !=null)
+                    printLevel(node.right, h-1,leftToRightFlag,res);
+            }else{
+                
+                if(node.right !=null)
+                    printLevel(node.right, h-1,leftToRightFlag,res);
+                    
+                if(node.left !=null)
+                    printLevel(node.left,h-1,leftToRightFlag,res);
+            }
+        }`
+        
+https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1        
+
 ```java
 
 class Spiral
@@ -336,7 +358,8 @@ class Spiral
 }
 ```
 
-
+  5.2 Usint two Stack S1 and S2 and use alternatively at each level for printing.
+  
 
 #### 6. Lowest Common Ancestor in a BST
 
