@@ -288,6 +288,13 @@ class NodeW {
 
 7. Lowest Common Ancestor in a BST
 
+  If we get null from left tree then all three nodes are present in right tree, and vise versa.
+  
+  but if left is true and right is true then the node it self is LCA.
+  
+  So the idea is we will search for left node in left, if it is not present then both would be right tree and vise versa.
+  
+
 8. Convert a given Binary Tree to Doubly Linked List
 
 9. Write Code to Determine if Two Trees are Identical or Not
