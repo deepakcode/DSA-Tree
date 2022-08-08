@@ -566,7 +566,29 @@ class Res{
 
 13. Number of leaf nodes
 
-#### 14. Height of Binary Tree
+```java
+class Tree
+{
+    int countLeaves(Node root) 
+    {
+        if(root==null)
+            return 0;
+       
+        if(root.left==null && root.right==null)
+            return 1;
+            
+        int lc = countLeaves(root.left);
+        
+        int rc = countLeaves(root.right);
+        
+        return lc+rc;
+    }
+}
+
+```
+
+
+ 14. Height of Binary Tree
 
 ```java
    private static int getHeight(Node root){
