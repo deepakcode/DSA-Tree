@@ -283,6 +283,61 @@ class NodeW {
 
 5. Level order traversal in spiral form
 
+```java
+
+class Spiral
+{
+    //Function to return a list containing the level order 
+    //traversal in spiral form.	
+    ArrayList<Integer> findSpiral(Node root) {
+        
+       ArrayList<Integer> res = new ArrayList<Integer>(); 
+        
+       int h = height(root);
+       boolean leftToRightFlag=true;
+       
+        for (int i = 0; i <=h; i++) {
+            printLevel(root,i, leftToRightFlag,res);
+            leftToRightFlag =!leftToRightFlag;
+            //System.out.println();
+        }
+        return res;
+    }
+    
+    int height(Node root){
+        if(root==null)
+            return 0;
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
+    
+    void printLevel(Node node, int h, boolean leftToRightFlag, ArrayList<Integer> res){
+        if(h==0)
+            return;
+        if(h==1)
+            //System.out.print(node.data+" ");
+            res.add(node.data);
+        if(h>1 ){
+            if(leftToRightFlag){
+                if(node.left !=null)
+                    printLevel(node.left,h-1,leftToRightFlag,res);
+                    
+                if(node.right !=null)
+                    printLevel(node.right, h-1,leftToRightFlag,res);
+            }else{
+                
+                if(node.right !=null)
+                    printLevel(node.right, h-1,leftToRightFlag,res);
+                    
+                if(node.left !=null)
+                    printLevel(node.left,h-1,leftToRightFlag,res);
+            }
+        }
+    }
+}
+```
+
+
+
 #### 6. Lowest Common Ancestor in a BST
 
   https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1
