@@ -131,6 +131,8 @@ Time complecity is same in both O(n) but space complexity is O(h) for aux stack,
 
 2. Check for BST
 
+https://practice.geeksforgeeks.org/problems/check-for-bst/1
+
 BST property is left should be less than root and right should be greater then root.
 
 It is is BST in-order travers should give us sorted array, so we just need to check each number is in accending order! 
@@ -170,6 +172,8 @@ public class Solution
 ```
 
 3. Print Bottom View of Binary Tree
+
+https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
 
 DO BFS traversal with horizontal distance, horizondal distance  -
 
