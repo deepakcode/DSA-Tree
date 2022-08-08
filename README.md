@@ -331,8 +331,8 @@ class NodeW {
 
     Take max of below 2 values for each node 
  
-      - Math.max(leftHeight, rightHeight) +1
-      - leftHeight+rightHeight +1
+      - Math.max(leftHeight, rightHeight) + 1
+      - leftHeight+rightHeight + 1
       
       
   9. Connect Nodes at Same Level
