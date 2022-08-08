@@ -281,12 +281,9 @@ class NodeW {
 }
 ```
 
-
 5. Level order traversal in spiral form
 
-6. Connect Nodes at Same Level
-
-7. Lowest Common Ancestor in a BST
+## 6. Lowest Common Ancestor in a BST
 
   If we get null from left tree then all three nodes are present in right tree, and vise versa.
   
@@ -294,23 +291,29 @@ class NodeW {
   
   So the idea is we will search for left node in left, if it is not present then both would be right tree and vise versa.
   
+## 7. Maximum Path Sum
 
-8. Convert a given Binary Tree to Doubly Linked List
+## 8. Diameter of a Binary Tree
+  
+  9. Connect Nodes at Same Level
 
-9. Write Code to Determine if Two Trees are Identical or Not
+10. Convert a given Binary Tree to Doubly Linked List
 
-10. Given a binary tree, check whether it is a mirror of itself
+11. Write Code to Determine if Two Trees are Identical or Not
 
-11. Height of Binary Tree
+12. Given a binary tree, check whether it is a mirror of itself
 
-12. Maximum Path Sum
+13. Number of leaf nodes
 
-13. Diameter of a Binary Tree
+14. Check if given Binary Tree is Height Balanced or Not
 
-14. Number of leaf nodes
+15. Serialize and Deserialize a Binary Tree
 
-15. Check if given Binary Tree is Height Balanced or Not
+# 16. Height of Binary Tree
 
-16. Serialize and Deserialize a Binary Tree
-
-</p>
+  ```java
+   private static int getHeight(Node root){
+        if(root==null) return 0;
+            return 1+Math.max(getHeight(root.left), getHeight(root.right));
+    }
+  ```
