@@ -319,7 +319,7 @@ class NodeW {
     }
   ```
   
-#### 7. Maximum Path Sum
+#### 7. Maximum Path Sum (VII) 
 
 ```java
     //Take max of below 3 values for each node 
@@ -339,7 +339,7 @@ https://practice.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1
       
 ```java
 class Res{
-    int val=0;
+    public int val;
 }
 
 class Solution
@@ -349,35 +349,31 @@ class Solution
     
      int findMaxSum(Node node){
           Res res = new Res();
-          
-          findMaxSum(Node node, res);
-          
-          return res;
+          res.val = Integer.MIN_VALUE;
+          findMaxUtil(node, res);
+          return res.val;
      }
     
-    void findMaxSum(Node node, Res res){
+    int findMaxUtil(Node node, Res res){
 
         int l = 0, r = 0;
         
         if(node==null)
-            return;
+            return 0;
             
         if(node.left !=null) 
-            l = findMaxSum(node.left,res);
+            l = findMaxUtil(node.left,res);
             
         if(node.right !=null) 
-            r = findMaxSum(node.right,res);
+            r = findMaxUtil(node.right,res);
            
-         //max path sum for parent call of root. 
-         //This path must include at-most one child of root.    
         int max_single = Math.max(node.data, node.data + Math.max(l ,r));
         
-        //path via self | when node it self is result
-        //max_top represents the sum when the node under consideration 
         int max_top = Math.max(max_single, l + r + node.data);
         
-        //storing the maximum result.
         res.val = Math.max(res.val, max_top);
+        
+        return max_single;
         
     }
 }
