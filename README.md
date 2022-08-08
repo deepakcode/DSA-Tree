@@ -171,6 +171,57 @@ public class Solution
 
 3. Print Bottom View of Binary Tree
 
+DO BFS traversal with horizontal distance, horizondal distance  -
+
+if horizontal distance property is not present in Node, then create node wrapper
+
+```java
+class NodeW{
+  Node node;
+  int hd
+}
+
+||
+
+class Node{
+  int data;
+  int hd
+}
+
+```
+
+
+```java
+class Solution {
+    public ArrayList<Integer> bottomView(Node root) {
+        ArrayList<Integer> res = new ArrayList<>(0);
+        if (root == null)
+            return res;
+        int hd = 0;
+        Queue<Node> queue = new LinkedList<>();
+        root.hd = hd;
+        queue.add(root);
+        //store the hd and values pair (last value is bottom view first value is top view)
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        while (!queue.isEmpty()) {
+            Node temp = queue.poll();
+            hd = temp.hd;
+            map.put(hd, temp.data);
+            if (temp.left != null) {
+                temp.left.hd = hd - 1;
+                queue.add(temp.left);
+            }
+            if (temp.right != null) {
+                temp.right.hd = hd + 1;
+                queue.add(temp.right);
+            }
+        }
+        map.entrySet().stream().forEach(e -> res.add(e.getValue()));
+        return res;
+    }
+}
+```
+
 4. Print a Binary Tree in Vertical Order
 
 5. Level order traversal in spiral form
