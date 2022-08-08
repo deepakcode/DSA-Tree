@@ -384,9 +384,60 @@ class Solution
 
     Take max of below 2 values for each node 
  
-      - Math.max(leftHeight, rightHeight) + 1
-      - leftHeight+rightHeight + 1
+      - if node is not forming diameter then 
+        `int singleMax = 1+Math.max(lh,rh);`
+         return singleMax`
+        
+      - but if node is formaing diameter then
+          
+          `int tempRes = Math.max(1+ld+rd, singleMax);
+          res.val = Math.max(tempRes,res.val);`
       
+https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1
+      
+```java
+class Solution {
+    // Function to return the diameter of a Binary Tree.
+    int diameter(Node root) {
+        Res res = new Res();
+        res.val = Integer.MIN_VALUE;
+        dUtil(root,res);
+        return res.val;
+    }
+    
+    int dUtil(Node root, Res res) {
+    
+        if(root==null)
+            return 0; 
+    
+        int lh = height(root.left);
+        int rh = height(root.right);
+    
+        // if diameter is not via this node then passing this to ancestor
+        // return this node!
+        int singleMax = 1+Math.max(lh,rh);
+        
+        int ld = dUtil(root.left , res);
+        int rd = dUtil(root.right , res);
+        
+            int tempRes = Math.max(1+ld+rd, singleMax);
+            res.val = Math.max(tempRes,res.val);        
+        
+        return singleMax;
+    }
+    
+    int height(Node root){
+        if(root==null)
+            return 0;
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
+}
+
+class Res{
+    int val;
+}
+```
+
       
   9. Connect Nodes at Same Level
 
