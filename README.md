@@ -360,6 +360,47 @@ class Spiral
 
   5.2 Usint two Stack S1 and S2 and use alternatively at each level for printing.
   
+```java
+class Spiral {
+    //Function to return a list containing the level order 
+    //traversal in spiral form.	
+    ArrayList<Integer> findSpiral(Node root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        if (root == null)
+            return res;
+        // using 2 stack approach
+        Stack<Node> s1 = new Stack<>();
+        Stack<Node> s2 = new Stack<>();
+        s1.add(root);
+        
+        while (!s1.isEmpty() || !s2.isEmpty()) {
+            
+            while (!s1.isEmpty()) {
+                Node node = s1.pop();
+                //System.out.print(node.data+"- ");
+                res.add(node.data);
+                if (node.right != null)
+                    s2.add(node.right);
+                if (node.left != null)
+                    s2.add(node.left);
+            }
+            
+            while (!s2.isEmpty()) {
+                Node node = s2.pop();
+                res.add(node.data);
+                //System.out.print(node.data+"_");
+                if (node.left != null)
+                    s1.add(node.left);
+                if (node.right != null)
+                    s1.add(node.right);
+            }
+            
+        }// true while 
+        return res;
+    }//method
+}// class
+```
+  
 
 #### 6. Lowest Common Ancestor in a BST
 
@@ -456,7 +497,6 @@ class Solution
     }
 }
 ```
-
 
 #### 8. Diameter of a Binary Tree
 
