@@ -438,22 +438,17 @@ class Res{
 }
 ```
 
-      
-  9. Connect Nodes at Same Level
+09. Write Code to Determine if Two Trees are Identical or Not
 
-10. Convert a given Binary Tree to Doubly Linked List
+10. Given a binary tree, check whether it is a mirror of itself
 
-11. Write Code to Determine if Two Trees are Identical or Not
+11. Check if given Binary Tree is Height Balanced or Not
 
-12. Given a binary tree, check whether it is a mirror of itself
+12. Serialize and Deserialize a Binary Tree
 
 13. Number of leaf nodes
 
-14. Check if given Binary Tree is Height Balanced or Not
-
-15. Serialize and Deserialize a Binary Tree
-
-#### 16. Height of Binary Tree
+#### 14. Height of Binary Tree
 
 ```java
    private static int getHeight(Node root){
@@ -461,3 +456,7 @@ class Res{
             return 1+Math.max(getHeight(root.left), getHeight(root.right));
     }
 ```
+
+15. Connect Nodes at Same Level
+
+16. Convert a given Binary Tree to Doubly Linked List
