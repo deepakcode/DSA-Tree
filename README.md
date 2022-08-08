@@ -558,6 +558,27 @@ class Res{
 
 09. Write Code to Determine if Two Trees are Identical or Not
 
+
+
+class Solution
+{
+    //Function to check if two trees are identical.
+	boolean isIdentical(Node root1, Node root2)
+	{
+	    if(root1==null && root2==null){
+	        return true;
+	    }
+	    
+	    if(root1 != null && root2 != null)
+	      return
+                    root1.data == root2.data
+                            && isIdentical(root1.left, root2.left)
+                            && isIdentical(root1.right, root2.right);
+        return false;
+	}
+	
+}
+
 10. Given a binary tree, check whether it is a mirror of itself
 
 11. Check if given Binary Tree is Height Balanced or Not
