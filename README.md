@@ -557,9 +557,7 @@ class Res{
 ```
 
 09. Write Code to Determine if Two Trees are Identical or Not
-
-
-
+```java
 class Solution
 {
     //Function to check if two trees are identical.
@@ -578,7 +576,7 @@ class Solution
 	}
 	
 }
-
+```
 10. Given a binary tree, check whether it is a mirror of itself
 
 11. Check if given Binary Tree is Height Balanced or Not
