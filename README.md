@@ -319,10 +319,22 @@ class NodeW {
   
 #### 7. Maximum Path Sum
 
+    Take max of below 4 values for each node 
+   
+      - Root
+      - Root+left;
+      - Root+Right;
+      - Root+left+Right;
 
 
 #### 8. Diameter of a Binary Tree
-  
+
+    Take max of below 2 values for each node 
+ 
+      - Math.max(leftHeight, rightHeight) +1
+      - leftHeight+rightHeight +1
+      
+      
   9. Connect Nodes at Same Level
 
 10. Convert a given Binary Tree to Doubly Linked List
@@ -337,7 +349,7 @@ class NodeW {
 
 15. Serialize and Deserialize a Binary Tree
 
-# 16. Height of Binary Tree
+#### 16. Height of Binary Tree
 
 ```java
    private static int getHeight(Node root){
