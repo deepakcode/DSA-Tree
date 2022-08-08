@@ -321,7 +321,8 @@ class NodeW {
   
 #### 7. Maximum Path Sum
 
-    Take max of below 3 values for each node 
+```java
+    //Take max of below 3 values for each node 
    
          //max path sum for parent call of root. 
          //This path must include at-most one child of root.    
@@ -333,7 +334,7 @@ class NodeW {
         
         //storing the maximum result.
         res.val = Math.max(res.val, max_top);
-      
+```
 https://practice.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1      
       
 ```java
