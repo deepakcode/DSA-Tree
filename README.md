@@ -292,7 +292,6 @@ class NodeW {
   So the idea is we will search for left node in left, if it is not present then both would be right tree and vise versa.
   
   ```java
-  
     class Solution
     {
         //Function to return the lowest common ancestor in a Binary Tree.
@@ -316,7 +315,7 @@ class NodeW {
              }
       }
     }
-  ``
+  ```
   
 #### 7. Maximum Path Sum
 
@@ -340,9 +339,9 @@ class NodeW {
 
 # 16. Height of Binary Tree
 
-  ```java
+```java
    private static int getHeight(Node root){
         if(root==null) return 0;
             return 1+Math.max(getHeight(root.left), getHeight(root.right));
     }
-  ```
+```
