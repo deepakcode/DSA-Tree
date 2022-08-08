@@ -228,6 +228,60 @@ class Solution {
 
 4. Print a Binary Tree in Vertical Order
 
+This question is similar to above, here we need to collect all the values instead of first value.
+
+```java
+class Solution
+{
+    //Function to find the vertical order traversal of Binary Tree.
+    static ArrayList<Integer> verticalOrder(Node root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        if (root == null)
+            return res;
+        TreeMap<Integer, ArrayList<Integer>> map = new TreeMap<>();
+        Queue<NodeW> queue = new LinkedList<>();
+        NodeW rootW = new NodeW(root, 0); // root hd=0;
+        queue.add(rootW);
+        while (!queue.isEmpty()) {
+            NodeW temp = queue.poll();
+            int hd = temp.hd;
+            ArrayList<Integer> tempQueue = map.get(hd);
+            if (tempQueue != null) {
+                tempQueue.add(temp.node.data);
+                map.put(hd, tempQueue);
+            } else {
+                tempQueue = new ArrayList<Integer>();
+                tempQueue.add(temp.node.data);
+                map.put(hd, tempQueue);
+            }
+            if (temp.node.left != null) {
+                queue.add(new NodeW(temp.node.left, hd - 1));
+            }
+            if (temp.node.right != null) {
+                queue.add(new NodeW(temp.node.right, hd + 1));
+            }
+        }// while 
+
+        map.entrySet().stream().forEach(list -> {
+            res.addAll(list.getValue());
+        });
+        return res;
+    }
+}
+
+class NodeW {
+
+    Node node;
+    int hd;
+
+    NodeW(Node node, int hd) {
+        this.node = node;
+        this.hd = hd;
+    }
+}
+```
+
+
 5. Level order traversal in spiral form
 
 6. Connect Nodes at Same Level
