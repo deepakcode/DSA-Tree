@@ -582,13 +582,11 @@ class Solution
 ```
 10. Given a binary tree, check whether it is a mirror of itself
 
-	solve it similar to two trees are identicle or not! same problem.
+	- solve it similar to two trees are identicle or not! same problem.
 	
+	`return isIdentical(root,root);`
 
-`public static boolean isSymmetric(Node root)
-{
-	return isIdentical(root,root);
-}`
+
 
 https://practice.geeksforgeeks.org/problems/symmetric-tree/1
 
