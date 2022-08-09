@@ -582,6 +582,35 @@ class Solution
 ```
 10. Given a binary tree, check whether it is a mirror of itself
 
+	solve it similar to two trees are identicle or not! same problem.
+	
+
+`public static boolean isSymmetric(Node root)
+{
+	return isIdentical(root,root);
+}`
+
+https://practice.geeksforgeeks.org/problems/symmetric-tree/1
+
+```java
+public static boolean isSymmetric(Node root)
+{
+	return isIdentical(root,root);
+}
+
+static boolean isIdentical(Node root1, Node root2) {
+
+if (root1 == null && root2 == null)
+    return true;
+if (root1 != null && root2!= null)
+    return
+	    root1.data == root2.data
+		    && isIdentical(root1.left, root2.right)
+		    && isIdentical(root1.right, root2.left);
+return false;
+}
+```
+
 11. Check if given Binary Tree is Height Balanced or Not
 
 12. Serialize and Deserialize a Binary Tree
