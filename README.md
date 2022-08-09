@@ -611,9 +611,40 @@ return false;
 
 11. Check if given Binary Tree is Height Balanced or Not
 
-12. Serialize and Deserialize a Binary Tree
+https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1
 
-13. Number of leaf nodes
+```java
+class Tree
+{
+    
+    //Function to check whether a binary tree is balanced or not.
+    boolean isBalanced(Node root)
+    {
+        //System.out.println(height(root));
+        
+        if(root==null)
+            return true;
+            
+        int hdiff= height(root.left) - height(root.right);
+        
+        if (Math.abs(hdiff)<=1 && isBalanced(root.left) && isBalanced(root.right))
+            return true;
+        else 
+            return false;
+    
+    }
+    
+    int height(Node root){
+        
+        if(root==null)
+            return 0;
+        else
+            return 1 + Math.max(height(root.left), height(root.right));
+    }
+}
+```
+
+12. Number of leaf nodes
 
 ```java
 class Tree
@@ -637,7 +668,7 @@ class Tree
 ```
 
 
- 14. Height of Binary Tree
+ 13. Height of Binary Tree
 
 ```java
    private static int getHeight(Node root){
@@ -645,6 +676,7 @@ class Tree
             return 1+Math.max(getHeight(root.left), getHeight(root.right));
     }
 ```
+14. Serialize and Deserialize a Binary Tree
 
 15. Connect Nodes at Same Level
 
