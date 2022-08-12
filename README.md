@@ -676,8 +676,12 @@ class Tree
             return 1+Math.max(getHeight(root.left), getHeight(root.right));
     }
 ```
-14. Serialize and Deserialize a Binary Tree
 
-15. Connect Nodes at Same Level
+
+14. Connect Nodes at Same Level
+
+<img width="452" alt="Screenshot 2022-08-12 at 1 46 15 PM" src="https://user-images.githubusercontent.com/13814143/184316215-b29366d6-80fe-43ef-a081-14714a262c87.png">
+
+15. Serialize and Deserialize a Binary Tree
 
 16. Convert a given Binary Tree to Doubly Linked List
